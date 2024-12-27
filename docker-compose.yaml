@@ -1,0 +1,16 @@
+version: "3"
+services:
+  filebrowser:
+    image: filebrowser/filebrowser
+    container_name: filebrowser
+    restart: unless-stopped
+    volumes:
+      - ./stacks:/srv              # Carpeta para tus archivos (cambia la ruta según tu proyecto)
+      - ./filebrowser.db:/database.db  # Archivo de base de datos
+      - ./settings.json:/settings.json # Archivo de configuración
+    environment:
+      PUID: ${UID:-1000}               # PUID configurado por variable de entorno (si no, por defecto 1000)
+      PGID: ${GID:-1000}               # PGID configurado por variable de entorno (si no, por defecto 1000)
+    ports:
+      - "5040:80"                      # Exponer puerto 8080 para acceder desde el navegador se abre en VPS el 5040
+    user: "${UID}:${GID}"              # Usar UID y GID del sistema para permisos adecuados
