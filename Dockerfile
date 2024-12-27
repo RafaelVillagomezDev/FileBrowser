@@ -7,7 +7,7 @@ COPY ./filebrowser.db /database.db
 COPY ./stacks /srv
 
 # Exponer el puerto por si deseas personalizarlo dentro de la imagen
-EXPOSE 80
+EXPOSE 5040
 
 # Comando por defecto al iniciar el contenedor (si no se usa docker-compose)
 CMD ["filebrowser"]
