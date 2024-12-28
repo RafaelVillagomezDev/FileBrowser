@@ -1,0 +1,41 @@
+{
+  "address": "0.0.0.0",
+  "port": 8080,
+  "tls": false,
+  "baseURL": "/filebrowser",
+  "authentication": {
+    "method": "json",
+    "json": {
+      "file": "/database.db"
+    }
+  },
+  "database": "/database.db",
+  "log": "/var/log/filebrowser.log",
+  "root": "/srv",
+  "title": "FileBrowser",
+  "branding": {
+    "name": "FileBrowser",
+    "logo": "/assets/logo.png"
+  },
+  "theme": {
+    "primary": "#673ab7",
+    "secondary": "#2196f3"
+  },
+  "cors": {
+    "enabled": true,
+    "allowedOrigins": [
+      "http://localhost:8080"
+    ]
+  },
+  "security": {
+    "csrf": {
+      "enabled": true,
+      "tokenHeader": "X-CSRF-Token"
+    },
+    "rateLimit": {
+      "enabled": true,
+      "requestsPerMinute": 60
+    }
+  }
+}
+

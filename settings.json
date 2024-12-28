@@ -1,8 +1,0 @@
-{
-    "address": ":80",
-    "database": "/database.db",
-    "log": "/config/filebrowser.log",
-    "theme": "auto",
-    "locale": "en"
-  }
-  
