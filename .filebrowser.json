@@ -2,7 +2,11 @@
   "address": "0.0.0.0",
   "port": 8080,
   "tls": false,
+<<<<<<< HEAD
   "baseURL": "/filebrowser",
+=======
+  "baseURL": "/filebrowser",  
+>>>>>>> cb3415415124dc97ea2bdc77082e633e73c08d5f
   "authentication": {
     "method": "json",
     "json": {
@@ -38,4 +42,7 @@
     }
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> cb3415415124dc97ea2bdc77082e633e73c08d5f

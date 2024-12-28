@@ -13,7 +13,13 @@ COPY ./stacks /srv
 
 # Exponer el puerto 8080 (puerto estándar de FileBrowser)
 EXPOSE 8080
+<<<<<<< HEAD
 
 # Comando por defecto para iniciar FileBrowser
 CMD ["filebrowser", "-r", "/srv", "-d", "/database.db", "-l", "/var/log/filebrowser.log"]
 
+=======
+
+# Comando por defecto para iniciar FileBrowser
+CMD ["filebrowser", "-r", "/srv", "-d", "/database.db", "-l", "/var/log/filebrowser.log"]
+>>>>>>> cb3415415124dc97ea2bdc77082e633e73c08d5f

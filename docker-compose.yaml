@@ -34,4 +34,7 @@ services:
 networks:
   webnet:
     driver: bridge                   # Especificar el driver de la red
+<<<<<<< HEAD
 
+=======
+>>>>>>> cb3415415124dc97ea2bdc77082e633e73c08d5f
