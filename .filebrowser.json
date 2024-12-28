@@ -6,16 +6,16 @@
   "authentication": {
     "method": "json",
     "json": {
-      "file": "/database.db"
+      "file": "/config/database.db"
     }
   },
-  "database": "/database.db",
-  "log": "/var/log/filebrowser.log",
+  "database": "/config/database.db",
+  "log": "/logs/filebrowser.log",
   "root": "/srv",
   "title": "FileBrowser",
   "branding": {
     "name": "FileBrowser",
-    "logo": "/assets/logo.png"
+    "logo": "/srv/assets/logo.png"
   },
   "theme": {
     "primary": "#673ab7",
@@ -24,9 +24,6 @@
   "cors": {
     "enabled": true,
     "allowedOrigins": [
-      "http://localhost:8080",
-      "http://yandrydev.es",
-      "http://www.yandrydev.es",
       "https://yandrydev.es",
       "https://www.yandrydev.es"
     ]
