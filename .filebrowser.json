@@ -2,7 +2,7 @@
   "address": "0.0.0.0",
   "port": 8080,
   "tls": false,
-  "baseURL": "/filebrowser",  
+  "baseURL": "/filebrowser",
   "authentication": {
     "method": "json",
     "json": {
@@ -24,7 +24,11 @@
   "cors": {
     "enabled": true,
     "allowedOrigins": [
-      "http://localhost:8080"
+      "http://localhost:8080",
+      "http://yandrydev.es",
+      "http://www.yandrydev.es",
+      "https://yandrydev.es",
+      "https://www.yandrydev.es"
     ]
   },
   "security": {
