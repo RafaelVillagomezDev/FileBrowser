@@ -1,15 +1,18 @@
-# Usa la imagen base de FileBrowser
-FROM filebrowser/filebrowser
+# Usa la imagen oficial de FileBrowser
+FROM filebrowser/filebrowser:latest
+
+# Establecer el usuario y el grupo (opcional, pero recomendado si usas UID y GID específicos)
+# USER 1000:1000
 
 # Copia tu archivo de configuración y otros archivos necesarios
-COPY ./settings.json /settings.json
+COPY ./.filebrowser.json /.filebrowser.json
 COPY ./filebrowser.db /database.db
 
 # Copia el directorio de archivos a /srv (ajusta la ruta según corresponda)
 COPY ./stacks /srv
 
-# Exponer el puerto 5040, que es el puerto por defecto de FileBrowser
-EXPOSE 5040
+# Exponer el puerto 8080 (puerto estándar de FileBrowser)
+EXPOSE 8080
 
 # Comando por defecto para iniciar FileBrowser
 CMD ["filebrowser", "-r", "/srv", "-d", "/database.db", "-l", "/var/log/filebrowser.log"]
