@@ -5,32 +5,32 @@ services:
     container_name: filebrowser
     restart: unless-stopped
     volumes:
-      - ./stacks:/srv               # Carpeta para tus archivos
-      - ./filebrowser.db:/database.db # Archivo de base de datos
-      - ./.filebrowser.json:/.filebrowser.json # Archivo de configuración
+      - ./stacks:/srv                # Carpeta para archivos
+      - ./filebrowser.db:/config/database.db  # Ajustada la ruta
+      - ./.filebrowser.json:/config/.filebrowser.json
     environment:
       UID: 1000                      # Establecer UID
       GID: 1000                      # Establecer GID
     ports:
-      - "5040:8080"                  # Exponer puerto 5040 dentro del contenedor y del host
-    user: "1000:1000"                # Usar UID y GID del sistema para permisos adecuados
+      - "5040:8080"
+    user: "1000:1000"
     networks:
-      - webnet                       # Conectar a la red webnet
+      - webnet
 
   nginx:
     image: nginx:alpine
     container_name: nginx_proxy
     ports:
-      - "8080:80"                    # Puerto HTTP
-      - "8443:443"                   # Puerto HTTPS
+      - "8080:80"
+      - "8443:443"
     volumes:
-      - ./.nginx/nginx.conf:/etc/nginx/conf.d/default.conf # Archivo de configuración de NGINX
-      - ./.nginx/ssl:/etc/nginx/ssl   # Carpeta con certificados SSL (si los usas)
+      - ./.nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./.nginx/ssl:/etc/nginx/ssl
     networks:
-      - webnet                       # Conectar a la misma red webnet
+      - webnet
     depends_on:
       - filebrowser
 
 networks:
   webnet:
-    driver: bridge                   # Especificar el driver de la red
+    driver: bridge
